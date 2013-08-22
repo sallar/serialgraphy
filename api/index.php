@@ -17,12 +17,13 @@ require 'cache.class.php';
 $cache     = Cache::getInstance();
 $cachename = 'trakt';
 $json      = $cache->getVar($cachename);
+$traktKey  = "__YOUR_TRAKT_TV_API_KEY__";
 
 // If False
 // ------------------------------------------------------
 if( $json === false )
 {
-    $data   = file_get_contents('http://api.trakt.tv/calendar/shows.json/253267c19cfcf5eb3c7f35fd1ea1f7c3');
+    $data   = file_get_contents('http://api.trakt.tv/calendar/shows.json/' . $traktKey);
     $data   = json_decode($data);
     $genres = array('Animation', 'Home and Garden', 'Documentary', 'News', 'Children', 'Talk Show', 'Game Show', 'Sport', 'Soap', 'Reality');
 
