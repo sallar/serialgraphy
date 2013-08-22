@@ -14,7 +14,7 @@ This app populates its data using [Trakt.tv](http://trakt.tv) API and filters un
 You can install this app locally if you have PHP >= 5.4 installed on your machine.  
 Just copy the downloaded folder somewhere on your hard drive, then set your trakt.tv API key in `./api/index.php`:
 
-```
+```php
 //...
 $traktKey  = "__YOUR_TRAKT_TV_API_KEY__";
 //... 
@@ -22,9 +22,9 @@ $traktKey  = "__YOUR_TRAKT_TV_API_KEY__";
 You can sign up for a free api key in [their website](http://trakt.tv/api-docs).  
 Then:
 
-```
-$ cd /path/to/serialgraphy
-$ php -S 127.0.0.1:8080
+```bash
+cd /path/to/serialgraphy
+php -S 127.0.0.1:8080
 ```
 and then navigate to http://127.0.0.1:8080 in your browser and you're set.
 
