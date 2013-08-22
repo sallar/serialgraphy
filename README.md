@@ -4,6 +4,12 @@ Serialgraphy
 Tracking US TV Show Airtimes using [AngularJS](http://angularjs.org/) and CSS3.  
 This app populates its data using [Trakt.tv](http://trakt.tv) API and filters unrelated genres out using PHP and then caches the result for easy access, and updates it every 6 hours.
 
+## Features
+- Shows the Airtime using local timezone
+- Ability to change the Timezone to UTC and remember the choice
+- Filters out cartoons, reality shows, etc.
+- Responsive + Retina-ready
+
 ## Install it locally
 You can install this app locally if you have PHP >= 5.4 installed on your machine.  
 Just copy the downloaded folder somewhere on your hard drive and:
