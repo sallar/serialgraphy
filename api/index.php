@@ -1,4 +1,11 @@
 <?php
+/**
+ * Serialgraphy
+ * https://www.facebook.com/serialgraphy
+ *
+ * Released Under MIT License
+ * http://opensource.org/licenses/MIT
+ */
 // Init
 // ------------------------------------------------------
 define('CACHE_TYPE', 'file');
@@ -10,8 +17,6 @@ require 'cache.class.php';
 $cache     = Cache::getInstance();
 $cachename = 'trakt';
 $json      = $cache->getVar($cachename);
-
-//print_r($json);die();
 
 // If False
 // ------------------------------------------------------
