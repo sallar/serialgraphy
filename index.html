@@ -1,0 +1,79 @@
+<!--
+   _____              _         __                            __          
+  / ___/ ___   _____ (_)____ _ / /____ _ _____ ____ _ ____   / /_   __  __
+  \__ \ / _ \ / ___// // __ `// // __ `// ___// __ `// __ \ / __ \ / / / /
+ ___/ //  __// /   / // /_/ // // /_/ // /   / /_/ // /_/ // / / // /_/ / 
+/____/ \___//_/   /_/ \__,_//_/ \__, //_/    \__,_// .___//_/ /_/ \__, /  
+                               /____/             /_/            /____/   
+/**
+ * Serialgraphy
+ * https://www.facebook.com/serialgraphy
+ *
+ * Released Under MIT License
+ * http://opensource.org/licenses/MIT
+ */
+-->
+<!doctype html>
+<html ng-app="Serialgraphy">
+<head>
+    <meta charset="UTF-8">
+    <title>Serialgraphy TV Guide</title>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/static/css/normalize.css" media="all">
+    <link rel="stylesheet" href="/static/css/style.css?v4" media="all">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+    <script src="/static/js/angular.pagination.js"></script>
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/snap.js"></script>
+    <script src="/static/js/localstorage.js"></script>
+    <script src="/static/js/app.js"></script>
+
+    <meta property="og:title" content="Serialgraphy: 7-Days TV Airtimes Guide"/>
+    <meta property="og:site_name" content="Serialgraphy TV Guide"/>
+    <meta property="og:description" content="Serialgraphy TV Guide is monitoring airtime guides for United States TV Shows. Updates everyday."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://serialgraphy.com/"/>
+    <meta property="og:image" content="http://serialgraphy.com/static/img/share.png"/>
+</head>
+<body>
+    <section id="content" class="main-content snap-content">
+        <header>
+            <a href="/" class="brand">Serialgraphy</a>
+            <a href="#" id="snap-toggle" class="toggle"></a>
+        </header>
+        <section ng-view ng-init="init()" id="the-app"></section>
+    </section>
+    <section class="snap-drawers">
+        <aside class="snap-drawer snap-drawer-right drawer" ng-controller="configController" ng-init="init()">
+            <h4>Timezone Setting:</h4>
+            <p>
+                <label for="local-tz"><input type="radio" name="userTimezone" ng-model="userTimezone" value="local" id="local-tz"> Local Time <abbr ng-show="localAbbr">({{ localAbbr }})</abbr></label><br>
+                <label for="utc-tz"><input type="radio" name="userTimezone" ng-model="userTimezone" value="utc" id="utc-tz"> UTC</label>
+            </p>
+
+            <h4>Acknowledgments:</h4>
+            <p>Show data are automatically populated using the <a href="http://trakt.tv/" target="_blank" rel="nofollow">Trakt.tv</a> API.</p>
+
+            <h4>License:</h4>
+            <p>Created by <a href="https://twitter.com/sallar" target="_blank">Sallar Kaboli</a> for <a href="https://www.facebook.com/serialgraphy" taget="_blank">Serialgraphy</a>.</p>
+            <p>Released under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>. <a href="https://github.com/sallar/serialgraphy" target="_blank">GitHub Project</a>.</p>
+        </aside>
+    </section>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-36836455-2', 'serialgraphy.com');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
