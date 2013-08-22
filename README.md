@@ -23,8 +23,8 @@ You can sign up for a free api key in [their website](http://trakt.tv/api-docs).
 Then:
 
 ```bash
-cd /path/to/serialgraphy
-php -S 127.0.0.1:8080
+$ cd /path/to/serialgraphy
+$ php -S 127.0.0.1:8080
 ```
 and then navigate to http://127.0.0.1:8080 in your browser and you're set.
 
