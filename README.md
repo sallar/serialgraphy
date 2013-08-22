@@ -7,6 +7,10 @@ This app populates its data using [Trakt.tv](http://trakt.tv) API and filters un
 ## Online Version
 This web app is online and working on it's website: [Serialgraphy.com](http://serialgraphy.com).
 
+![](https://dl.dropboxusercontent.com/u/16657557/serialgraphy-1.jpg)
+![](https://dl.dropboxusercontent.com/u/16657557/serialgraphy-3.jpg)
+
+
 ## Features
 - Shows the Airtime using local timezone
 - Ability to change the Timezone to UTC and remember the choice
