@@ -1,0 +1,524 @@
+/**
+ * Serialgraphy
+ * https://www.facebook.com/serialgraphy
+ *
+ * Released Under MIT License
+ * http://opensource.org/licenses/MIT
+ */
+/**
+ * General
+ */
+html{
+    font: 16px/1.618 "Open Sans";
+}
+
+body{
+    -webkit-font-smoothing: antialiased;
+}
+
+a{
+    color: #34495e;
+    text-decoration: none;
+    border-bottom: 1px transparent solid;
+}
+
+a:hover{
+    border-bottom: 1px dotted #34495e;
+}
+
+/**
+ * Content
+ */
+.main-content{
+    background-color: #f9f9f9;
+    padding: 3%;
+}
+
+/**
+ * The Drawer
+ */
+.drawer{
+    background-color: #555;
+    padding: 1.5rem;
+    color: #ededed;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+    
+    .drawer h4{
+        margin: 2rem 0 1rem;
+        font-weight: 600;
+        border-bottom: 1px solid #777;
+        padding-bottom: .1rem;
+    }
+
+        .drawer h4:first-of-type{
+            margin-top: 0;
+        }
+
+    .drawer p{
+        font-size: .9rem;
+    }
+
+    .drawer a{
+        color: #fff;
+    }
+
+        .drawer a:hover{
+            border-bottom-color: #fff;
+        }
+
+/** 
+ * Header
+ */
+header{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+    header .brand{
+        display: inline-block;
+        width: 290px;
+        height: 63px;
+        background: url(../img/logo.png) 0 0 no-repeat;
+        text-indent: -99999px;
+        overflow: hidden;
+        border-bottom: 0 !important;
+    }
+
+    header .toggle{
+        display: block;
+        width: 50px;
+        height: 33px;
+        background: url(../img/toggle.png) 0 0 no-repeat;
+        border-bottom: 0 !important;
+        position: absolute;
+        right: 1rem;
+        top: 1.7rem;
+        opacity: .6;
+    }
+
+        header .toggle:hover{
+            opacity: 1;
+        }
+
+
+/**
+ * Shows
+ */
+.shows{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .shows > li{
+        border-bottom: 1px solid #ededed;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        display: block;
+    }
+
+        .shows > li > section{
+            display: table-cell;
+            vertical-align: top;
+            padding: 0 1rem;
+        }
+
+    .shows__loading{
+        border-bottom: 0 !important;
+        padding: 5%;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+        .shows__loading p{
+            font-size: 4rem;
+            font-weight: 300;
+            color: #777;
+        }
+
+            .shows__loading p span{
+                display: inline-block;
+                -webkit-animation: fadeInOut 500ms infinite alternate;
+                   -moz-animation: fadeInOut 500ms infinite alternate;
+                    -ms-animation: fadeInOut 500ms infinite alternate;
+                        animation: fadeInOut 500ms infinite alternate;
+            }
+
+                .shows__loading p span:nth-child(2){
+                    -webkit-animation-delay: 600ms;
+                       -moz-animation-delay: 600ms;
+                        -ms-animation-delay: 600ms;
+                            animation-delay: 600ms;
+                }
+
+                .shows__loading p span:nth-child(3){
+                    -webkit-animation-delay: 700ms;
+                       -moz-animation-delay: 700ms;
+                        -ms-animation-delay: 700ms;
+                            animation-delay: 700ms;
+                }
+
+/**
+ * Show Parts
+ */
+.show__image{}
+
+    .show__image img{
+        height: 150px;
+        width: auto;
+        display: block;
+        border-radius: 4px;
+    }
+
+.show__desc{}
+
+    .show__desc h2{
+        margin: 5px 0 8px;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+
+        .show__desc h2 small{
+            font-weight: 300;
+            color: #999;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            white-space: nowrap;
+        }
+
+    .show__desc .meta{
+        font-weight: normal;
+        font-size: 1rem;
+        color: #666;
+        margin: 0;
+    }
+
+        .show__desc .meta .number,
+        .show__desc .meta .genre{
+            /*padding: 2px 5px;
+            background-color: #f4f4f4;
+            color: #8846AC;
+            border-radius: 3px;*/
+            font-weight: 600;
+            color: #444;
+        }
+
+        .show__desc .meta .genre{
+            margin-right: 5px;
+            /*color: #6498C6;
+            color: #2c3e50;*/
+        }
+
+        .show__desc .meta .sep{
+            display: inline-block;
+            margin: 0 5px;
+            color: #888;
+        }
+
+    .show__nodesc{
+        color: #666;
+    }
+
+/**
+ * Search Form
+ */
+
+.form{
+    margin: 0 0 3rem;
+    padding: 1rem;
+}
+
+    .form__search{
+        width: 100%;
+        padding: 1rem;
+        font-size: 2rem;
+        font-weight: 300;
+        border: 2px solid #dedede;
+        border-radius: 3px;
+        background-color: transparent;
+        -webkit-appearance: none;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+        .form__search:focus{
+            outline: none;
+            border-color: #2980b9;
+        }
+
+/**
+ * Pagination
+ */
+.pager{
+    text-align: center;
+    line-height: 3rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 1rem;
+}
+
+    .pager button{
+        display: block;
+        width: 30%;
+        border: 0;
+        border-radius: 4px;
+        background-color: #ededed;
+        padding: 1rem 0;
+        font-size: 1rem;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+        .pager button:hover{
+            background-color: #dedede;
+        }
+
+        .pager button:active{
+            position: relative;
+            top: 1px;
+        }
+
+        .pager button[disabled]{
+            color: #ccc;
+        }
+
+        .pager button[disabled]:hover{
+            background-color: #ededed;
+        }
+
+    .pager__next{
+        float: right;
+        clear: right;
+    }
+
+    .pager__prev{
+        float: left;
+        clear: left;
+    }
+
+    .pager__pages{
+        width: 30%;
+        margin: 0 auto;
+    }
+
+/**
+ * Animations
+ */
+@-webkit-keyframes fadeInOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes fadeInOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-ms-keyframes fadeInOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes fadeInOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/**
+ * Responsive
+ */
+@media only screen and (max-width: 480px) {
+    /**
+     * Chenge the root font size
+     */
+    html{
+        font-size: 14px;
+    }
+
+    /**
+     * Remove the page padding
+     */
+    .main-content{
+        padding: 0;
+    }
+
+    /**
+     * Minify the brand
+     */
+    header .brand{
+        /*width: 70px;*/
+        background-position: -70px 0;
+    }
+
+    header .toggle{
+        width: 40px;
+        top: 2rem;
+    }
+
+    /**
+     * Show image and description each in a row
+     */
+    .shows > li > section{
+        display: block;
+    }
+
+    /**
+     * Resize the image
+     */
+    .show__image{
+        margin-bottom: 1rem;
+    }
+
+        .show__image img{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+    /**
+     * Display the show info appropriately
+     */
+    .show__desc .info > span{
+        /*display: block;*/
+    }
+
+    .show__desc .info .sep{
+        /*display: none;*/
+    }
+
+    .show__desc .info .collapse{
+        display: none;
+    }
+
+    .show__desc .info .number{
+        margin-left: -0.2rem;
+    }
+
+    /**
+     * Downsize the loading indicator
+     */
+    .shows__loading{
+        padding: 3%;
+    }
+
+        .shows__loading p{
+            font-size: 3rem;
+            margin: 0;
+        }
+
+    /** 
+     * Downsize the search form
+     */
+    .form{
+        margin-bottom: 2rem;
+    }
+
+        .form__search{
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+    /**
+     * Modify the pager
+     */
+    .pager button{
+        width: 48%;
+    }
+
+    .pager__pages{
+        display: none;
+    }
+}
+
+/**
+ * Retina
+ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    header .brand{
+        background-image: url(../img/logo@2x.png);
+        background-size: 290px 63px;
+    }
+    header .toggle{
+        background-image: url(../img/toggle@2x.png);
+        background-size: 50px 33px;
+    }
+}
+
+/**
+ * Snap
+ */
+.snap-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 2;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.snap-drawers {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+}
+
+.snap-drawer {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+  width: 265px;
+  height: auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: width 0.3s ease;
+     -moz-transition: width 0.3s ease;
+      -ms-transition: width 0.3s ease;
+       -o-transition: width 0.3s ease;
+          transition: width 0.3s ease;
+}
+
+.snap-drawer-left {
+  left: 0;
+  z-index: 1;
+}
+
+.snap-drawer-right {
+  right: 0;
+  z-index: 1;
+}
+
+.snapjs-left .snap-drawer-right,
+.snapjs-right .snap-drawer-left {
+  display: none;
+}
+
+.snapjs-expand-left .snap-drawer-left,
+.snapjs-expand-right .snap-drawer-right {
+  width: 100%;
+}

@@ -1,0 +1,35 @@
+        <form method="post" class="form">
+            <input type="text" name="search" id="search" ng-model="filterText" class="form__search" placeholder="Search...">
+        </form>
+        <ul class="shows">
+            <li class="shows__show" ng-repeat="result in filtered = (results | filter:filterText) | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+                <section class="show__image">
+                    <img src="{{ result.episode.images.screen }}" alt="{{ result.show.title }}">
+                    <!-- <img src="/static/img/placeholder.png"> -->
+                </section>
+                <section class="show__desc">
+                    <h2><a href="http://www.imdb.com/title/{{ result.show.imdb_id }}/" target="_blank">{{ result.show.title }}</a> <small>{{ result.show.network }}</small></h2>
+                    <p class="meta">
+                        <span class="info">
+                            <span class="show__episode">
+                                S<span class="collapse">eason</span> <span class="number">{{ pad(result.episode.season) }}</span> E<span class="collapse">pisode</span> <span class="number">{{ pad(result.episode.number) }}</span>
+                            </span>
+                            <span class="show__time">
+                                <span class="sep">&bull;</span>
+                                <span class="genre">{{ result.dateObj.fromNow() }}</span><span class="sep">&bull;</span>
+                                <span class="genre">{{ formatDate(result.dateObj) }}</span>
+                            </span>
+                        </span>
+                    </p>
+                    <p ng-class="{show__nodesc: !result.episode.overview}">{{ result.episode.overview || "No description for this episode." }}</p>
+                </section>
+            </li>
+            <li class="shows__loading" ng-show="results.length == 0">
+                <p>Loading<span>.</span><span>.</span><span>.</span></p>
+            </li>
+        </ul>
+        <section class="pager" ng-hide="pagination.numPages <= 1 || results.length == 0">
+            <button ng-click="prevPage()" class="pager__prev" ng-disabled="pagination.page + 1 == 1">Previous</button>
+            <button ng-click="nextPage()" class="pager__next" ng-disabled="pagination.page + 1 == pagination.numPages">Next</button>
+            <section class="pager__pages">Page {{ pagination.page + 1 }} / {{ pagination.numPages }}</section>
+        </section>
