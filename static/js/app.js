@@ -105,7 +105,7 @@ app.controller("mainController", function($scope, $http, $routeParams, Paginatio
             angular.forEach(data, function(value, index)
             {
                 var date     = value.date
-                  , timezone = moment(date).isDST() ? ' -07:00' : ' -08:00';
+                  , timezone = moment(date).isDST() ? ' -04:00' : ' -08:00';
                 
                 // Store the Episodes
                 // ------------------------------------------------------
