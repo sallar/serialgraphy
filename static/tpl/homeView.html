@@ -4,11 +4,11 @@
         <ul class="shows">
             <li class="shows__show" ng-repeat="result in filtered = (results | filter:filterText) | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
                 <section class="show__image">
-                    <img src="{{ result.episode.images.screen }}" alt="{{ result.show.title }}">
+                    <a href="{{ findShowURL(result.show) }}" target="_blank"><img src="{{ result.episode.images.screen }}" alt="{{ result.show.title }}"></a>
                     <!-- <img src="/static/img/placeholder.png"> -->
                 </section>
                 <section class="show__desc">
-                    <h2><a href="http://www.imdb.com/title/{{ result.show.imdb_id }}/" target="_blank">{{ result.show.title }}</a> <small>{{ result.show.network }}</small></h2>
+                    <h2><a ng-href="/show/{{ encodeURI(result.show.title) }}">{{ result.show.title }}</a> <small>{{ result.show.network }}</small></h2>
                     <p class="meta">
                         <span class="info">
                             <span class="show__episode">

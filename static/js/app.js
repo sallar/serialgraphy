@@ -48,7 +48,7 @@ var app = angular.module('Serialgraphy', ['SimplePagination']).config(function($
         controller : 'mainController'
     });
 
-    $routeProvider.when('/page/:page', {
+    $routeProvider.when('/show/:show', {
         templateUrl: '/static/tpl/homeView.html',
         controller : 'mainController'
     });
@@ -83,7 +83,7 @@ app.service('timeZoneProvider', function($rootScope, myTimezone)
 /**
  * The main controller
  */
-app.controller("mainController", function($scope, $http, $routeParams, Pagination, timeZoneProvider)
+app.controller("mainController", function($scope, $http, $routeParams, $location, Pagination, timeZoneProvider)
 {
     $scope.apiURL          = "/api/?callback=JSON_CALLBACK";
     $scope.results         = [];
@@ -136,6 +136,13 @@ app.controller("mainController", function($scope, $http, $routeParams, Paginatio
                 // ------------------------------------------------------
                 $scope.initPagination();
 
+
+                // Set Up Route Filtering
+                // ------------------------------------------------------
+                if( $routeParams.show ){
+                    $scope.filterText = $routeParams.show;
+                }
+
                 
             }); // end foreach dates
         }) // end jsonp request
@@ -160,6 +167,32 @@ app.controller("mainController", function($scope, $http, $routeParams, Paginatio
             obj = ($scope.userTimezone == 'utc') ? obj.utc() : obj;
 
         return obj.format('hh:mm A');
+    }
+
+    /**
+     * URL Helper
+     */
+    $scope.encodeURI = function(str)
+    {
+        return encodeURIComponent(str);
+    }
+
+    /**
+     * Show URL helper
+     */
+    $scope.findShowURL = function(show)
+    {
+        if( show.imdb_id )
+        {
+            return "http://www.imdb.com/title/tt" + show.imdb_id.replace('tt', '') + "/";
+        }
+        else if( show.tvdb_id )
+        {
+            return "http://thetvdb.com/?tab=series&id=" + show.tvdb_id;
+        }
+        else{
+            return show.url;
+        }
     }
 
     /**

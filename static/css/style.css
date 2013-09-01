@@ -170,6 +170,10 @@ header{
  */
 .show__image{}
 
+    .show__image a{
+        border-bottom: none;
+    }
+
     .show__image img{
         height: 150px;
         width: auto;
